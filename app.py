@@ -21,9 +21,12 @@ def view():
         orderby = request.args.get('orderby')
         db.execute('SELECT * from employee order by '+orderby+' desc;')
     else:
+
+
         db.execute('SELECT * from employee;')
     myresult = db.fetchall()
     return jsonify(entries=myresult)
 
 if __name__=='__main__':
  app.run(debug=True)
+
